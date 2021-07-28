@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import Arweave from 'arweave'
 import TestWeave from 'testweave-sdk'
-import initialState from 'contracts/initialState.json'
+import initialState from 'contracts/token-pst-contract.json'
 import { readFileSync } from 'fs'
 import { join } from 'path'
 
 const deployContract = async (arweave: Arweave, wallet: string) => {
-    const contractPath = join(process.cwd(), '/contracts/SmartWeaveContract.js');
+    const contractPath = join(process.cwd(), '/contracts/token-pst-contract.js ');
     const contractSource = readFileSync(contractPath, 'utf-8').toString();
     const testWeave = await TestWeave.init(arweave);
 

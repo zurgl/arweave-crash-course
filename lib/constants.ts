@@ -43,7 +43,7 @@ export const CHAINS_CONFIG: ChainsType = {
                     url: ""
                 },
                 {
-                    id: "interact",
+                    id: "call",
                     title: "Interacting with SmartWeave",
                     url: ""
                 },

@@ -1,7 +1,7 @@
 import { Row } from 'antd';
 import { useEffect, useReducer } from "react";
 
-import { Connect, Wallet, Fund, Balance, Transfer, Submit, Deploy } from 'components/Steps';
+import { Connect, Wallet, Fund, Balance, Transfer, Submit, Deploy, Call } from 'components/Steps';
 import { useAppState, useLocalStorage } from 'hooks'
 import { initialState, appStateReducer, AppContext } from 'context'
 import { Sidebar, Step } from 'components/Layout'
@@ -49,6 +49,7 @@ const ArweaveApp: React.FC<AppI> = ({ chain }) => {
                 { step.id === "transfert" && <Transfer /> }
                 { step.id === "submit"    && <Submit   /> }
                 { step.id === "deploy"    && <Deploy   /> }
+                { step.id === "call"      && <Call     /> }
             </>
             }
             nav={<Nav />}
