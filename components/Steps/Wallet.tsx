@@ -2,10 +2,28 @@ import { Alert, Button, Col, Space, Typography } from 'antd';
 import { useAppState } from 'hooks'
 import Arweave from 'arweave'
 
-
 const { Text } = Typography;
 
-const Keys = () => {
+type downloadBoxT = {
+    wallet: string,
+    address: string
+}
+const DownloadBox = ({ wallet, address }: downloadBoxT) => {
+    return (
+        <Button>
+            <a
+                href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                    JSON.stringify(wallet)
+                )}`}
+                download={`arweave-${address}.json`}
+            >
+                {`Download Json`}
+            </a>
+        </Button>
+    )
+}
+
+const Wallet = () => {
     const {state, dispatch} = useAppState();
     const { host, port, protocol } = state;
 
@@ -56,11 +74,12 @@ const Keys = () => {
                 <Button type="primary" onClick={generateKeypair} style={{ marginBottom: "20px" }}>
                     Generate a Wallet
                 </Button>
-                { state?.address && <KeyPairStatusBox /> }
+                {state?.address && <KeyPairStatusBox />}
+                {state?.address && <DownloadBox wallet={state.wallet as string} address={state.address} /> }
             </Space>
         </Col>
     </>
     );
 }
 
-export default Keys
+export default Wallet

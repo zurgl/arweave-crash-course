@@ -23,7 +23,7 @@ const Home = () => {
 
 	return (
 		<Container span={12} offset={6}>
-			<Title>Figment Learn - All Pathways</Title>
+			<Title>Arweave - Crash Course</Title>
 			<ChainRow>
                 { active ? <Link href='/crash' key={id}>{box}</Link> : box }
 			</ChainRow>
@@ -98,7 +98,6 @@ const PolygonSVG = styled.svg`
 	height: 50px;
 	margin-bottom: 20px;
 `;
-
 
 export default function Index() {
   return (

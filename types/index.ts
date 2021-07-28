@@ -31,9 +31,11 @@ export type State = {
 }
 
 export type Action =
-  | { type: 'SetWallet'; wallet: string | undefined }
-  | { type: 'SetAddress'; address: string | undefined }
-  | { type: 'SetIndex'; index: number }
+    | { type: 'SetWallet'; wallet: string | undefined }
+    | { type: 'SetAddress'; address: string | undefined }
+    | { type: 'SetDataId'; dataId: string | undefined }
+    | { type: 'SetStateId'; stateId: string | undefined }
+    | { type: 'SetIndex'; index: number }
 
 // Components
 export type AlertT = "success" | "info" | "warning" | "error" | undefined

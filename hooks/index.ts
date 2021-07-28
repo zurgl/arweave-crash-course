@@ -1,34 +1,10 @@
 import {
   useState,
   useContext,
-  useEffect,
-  Dispatch,
-  SetStateAction,
 } from 'react'
 import type { State } from 'context'
-import { ArweaveContext } from 'context'
-/*
-function useLocalStorage(
-  key: string,
-  defaultValue: State
-): [State, Dispatch<SetStateAction<State>>] {
-  const [value, setValue] = useState(defaultValue)
+import { AppContext } from 'context'
 
-  useEffect(() => {
-    const stickyValue = window.localStorage.getItem(key)
-
-    if (stickyValue !== null) {
-      setValue(JSON.parse(stickyValue))
-    }
-  }, [key])
-
-  useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(value))
-  }, [key, value])
-
-  return [value, setValue]
-}
-*/
 const useLocalStorage = (key: string, initialValue: State) => {
   const [storedValue, setStoredValue] = useState<State>(() => {
     try {
@@ -52,6 +28,6 @@ const useLocalStorage = (key: string, initialValue: State) => {
   return [storedValue, setValue] as const;
 }
 
-const useAppState = () => useContext(ArweaveContext)
+const useAppState = () => useContext(AppContext)
 
 export { useLocalStorage, useAppState }

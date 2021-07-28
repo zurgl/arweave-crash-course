@@ -32,6 +32,26 @@ export const CHAINS_CONFIG: ChainsType = {
                     title: "Transfert some AR",
                     url: ""
                 },
+                {
+                    id: "submit",
+                    title: "Submitting a data transaction",
+                    url: ""
+                },
+                {
+                    id: "deploy",
+                    title: "Deploy SmartWeave Contract",
+                    url: ""
+                },
+                {
+                    id: "interact",
+                    title: "Interacting with SmartWeave",
+                    url: ""
+                },
+                {
+                    id: "retrieve",
+                    title: "Retrieve All post from Adress",
+                    url: ""
+                },
             ]
         },
 }

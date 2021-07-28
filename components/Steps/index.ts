@@ -1,9 +1,11 @@
 import Connect from '@steps/Connect'
-import Keys from '@steps/Keys'
+import Wallet from '@steps/Wallet'
 import Transfer from '@steps/Transfer'
 import Fund from '@steps/Fund'
 import Balance from '@steps/Balance'
+import Submit from '@steps/Submit'
+import Deploy from '@steps/Deploy'
 
 export {
-    Connect, Keys, Fund, Balance, Transfer
+    Connect, Wallet, Fund, Balance, Transfer, Submit, Deploy
 }
